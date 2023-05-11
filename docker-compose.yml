@@ -2,6 +2,7 @@ version: '3'
 
 services:
   streamlink-recorder:
+    restart: unless-stopped
     build:
       context: .
     volumes:
