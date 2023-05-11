@@ -13,3 +13,4 @@ services:
       - STREAM_OPTIONS=${STREAM_OPTIONS:---twitch-disable-reruns}
       - uid=${UID:-1000}
       - gid=${GID:-1000}
+      - TZ=Europe/Rome
