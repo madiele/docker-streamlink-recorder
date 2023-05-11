@@ -21,6 +21,7 @@ COPY ./streamlink-recorder.sh /home/script/
 COPY ./entrypoint.sh /home/script
 
 RUN ["chmod", "+x", "/home/script/entrypoint.sh"]
+RUN useradd -u 1000 stream_usr
 
 ENTRYPOINT [ "/home/script/entrypoint.sh" ]
 
