@@ -2,8 +2,8 @@
 
 # For more information visit: https://github.com/downthecrop/TwitchVOD
 
-while [ true ]; do
+while true; do
 	Date=$(date +%Y%m%d-%H%M%S)
-	streamlink $streamOptions $streamLink $streamQuality -o /home/download/$streamName"-$Date".mkv
-	sleep 60s
+	streamlink "$STREAM_OPTIONS" "$STREAM_LINK" "$STREAM_QUALITY" -o "/home/download/$STREAM_NAME-$Date.mkv"
+	sleep 300s
 done

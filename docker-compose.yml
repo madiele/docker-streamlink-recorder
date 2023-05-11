@@ -7,9 +7,9 @@ services:
     volumes:
       - ./download:/home/download
     environment:
-      - streamLink=${STREAM_LINK:?err}
-      - streamQuality=${STREAM_QUALITY:-360p}
-      - streamName=${STREAM_NAME:?err}
-      - streamOptions=${STREAM_OPTIONS:---twitch-disable-reruns}
+      - STREAM_LINK=${STREAM_LINK:?err}
+      - STREAM_QUALITY=${STREAM_QUALITY:-360p}
+      - STREAM_NAME=${STREAM_NAME:?err}
+      - STREAM_OPTIONS=${STREAM_OPTIONS:---twitch-disable-reruns}
       - uid=${UID:-1000}
       - gid=${GID:-1000}
