@@ -100,5 +100,4 @@ jobs:
             username: ${{ secrets.DOCKERHUB_USERNAME }}
             password: ${{ secrets.DOCKERHUB_TOKEN }}
         - name: merge into version
-        - name: merge into version
           run: docker buildx imagetools create -t ${{ secrets.DOCKERHUB_USERNAME }}/docker-stream-recoder:latest ${{ secrets.DOCKERHUB_USERNAME }}/docker-stream-recoder:latest-armv7 ${{ secrets.DOCKERHUB_USERNAME }}/docker-stream-recoder:latest-arm64 ${{ secrets.DOCKERHUB_USERNAME }}/docker-stream-recoder:latest-amd64
