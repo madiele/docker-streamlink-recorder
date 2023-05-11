@@ -3,6 +3,7 @@ version: '3'
 services:
   streamlink-recorder:
     restart: unless-stopped
+    image: madiele/docker-stream-recoder
     build:
       context: .
     volumes:
