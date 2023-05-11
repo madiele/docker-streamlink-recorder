@@ -7,9 +7,9 @@ services:
     volumes:
       - ./download:/home/download
     environment:
-      - streamLink=https://www.twitch.tv/tumblurr
-      - streamQuality=360p
-      - streamName=theprimeagen-recording
-      - streamOptions=--twitch-disable-reruns
-      - uid=1000
-      - gid=1000
+      - streamLink=${STREAM_LINK:?err}
+      - streamQuality=${STREAM_QUALITY:-360p}
+      - streamName=${STREAM_NAME:?err}
+      - streamOptions=${STREAM_OPTIONS:---twitch-disable-reruns}
+      - uid=${UID:-1000}
+      - gid=${GID:-1000}
