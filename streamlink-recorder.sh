@@ -4,6 +4,6 @@
 
 while true; do
 	Date=$(date +%Y%m%d-%H%M%S)
-	streamlink "$STREAM_OPTIONS" "$STREAM_LINK" "$STREAM_QUALITY" -o "/home/download/$STREAM_NAME-$Date.mkv"
+	streamlink --twitch-disable-ads "$STREAM_OPTIONS" "$STREAM_LINK" "$STREAM_QUALITY" -o "/home/download/$STREAM_NAME-$Date.mkv"
 	sleep 300s
 done
