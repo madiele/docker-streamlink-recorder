@@ -5,7 +5,7 @@ ENV streamlinkCommit=15fbab1b45e8bbe432b385c088cea2acfb8812f1
 ENV PATH "${HOME}/.local/bin:${PATH}"
 
 RUN apt-get update \
-    && apt-get install -y gosu python3-pip \
+    && apt-get install -y gosu python3-pip ffmpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
