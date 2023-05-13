@@ -10,6 +10,8 @@ while true; do
   end=$(date +%s)
   elapsed=$((end - start))
   duration=$(printf '%02d:%02d:%02d\n' $((elapsed/3600)) $((elapsed%3600/60)) $((elapsed%60)))
-  mv "$filename" "$STREAM_NAME-$Date-___${duration}___.mp4"
+  if [ -e "$filename" ]; then
+    mv "$filename" "$STREAM_NAME-$Date-___${duration}___.mp4"
+  fi
   sleep 300s
 done
