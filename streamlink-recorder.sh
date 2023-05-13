@@ -11,7 +11,7 @@ while true; do
   elapsed=$((end - start))
   duration=$(printf '%02d:%02d:%02d\n' $((elapsed/3600)) $((elapsed%3600/60)) $((elapsed%60)))
   if [ -e "$filename" ]; then
-    ffmpeg -i "$filename"  -c:v libx264 -crf 23 -c:a aac -movflags faststart "$STREAM_NAME-$Date-___${duration}___.mp4" \
+      ffmpeg -fflags +discardcorrupt -i "$filename" -c:v copy -c:a copy -f mp4 -movflags faststart -y "$STREAM_NAME-$Date-___${duration}___.mp4" \
       && \
     rm "$filename"
   fi
