@@ -6,6 +6,9 @@ while true; do
   Date=$(date +%Y-%m-%d_%H:%M:%S)
   filename=/home/download/$STREAM_NAME-$Date
   streamlink --twitch-disable-ads "$STREAM_OPTIONS" "$STREAM_LINK" "$STREAM_QUALITY" -o "${filename}.mkv" > /dev/null
+  if [ $? -ne 0 ]; then
+    streamlink "$ALTERNATIVE_STREAM_LINK" "$STREAM_LINK" "$STREAM_QUALITY" -o "${filename}.mkv" > /dev/null
+  fi
   if [ -e "${filename}.mkv" ]; then
     ffmpeg -fflags +discardcorrupt -i "${filename}.mkv" -c:v copy -c:a copy -f mp4 -movflags faststart -y "${filename}.mp4" \
       && \
